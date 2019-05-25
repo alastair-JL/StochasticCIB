@@ -12,7 +12,7 @@
 #' data(antCIB)
 #' LocalBoltzmann(antCIB)
 
-LocalBoltzmann<-function(TheList, TransRelAdj, beta=1){
+LocalBoltzmann<-function(TheList, TransRelAdj=NA, beta=1){
   if (is.na(TransRelAdj)){
     TransRelAdj<- MakeScoreMatrix(antCIB)   
   }

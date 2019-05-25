@@ -36,6 +36,7 @@ MakeScoreMatrix<-function(TheList){
     while( any(CurrentState>CIBshape) ){
       CurrentState<-CurrentState+c(0,(CurrentState>CIBshape)[-NumDesc]) -(CurrentState>CIBshape)*CIBshape      
     }    
+    nextname=paste(listName[CurrentState+shapeOffest],sep=" ",collapse=" ")
     WorldStateNames<- c(WorldStateNames,nextname)
     ##Okay, so we've identified the current state, and now need to determine its transitions.
     targetState<-CIBshape
