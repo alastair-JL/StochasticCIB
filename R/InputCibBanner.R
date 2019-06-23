@@ -45,5 +45,6 @@ InputCibBanner <-function(){
   CrossImpactMatrix<- mat.or.vec(length(StateList),length(StateList))
   dimnames(CrossImpactMatrix) = list( frameNames,frameNames)
   CrossImpactMatrix<-edit(CrossImpactMatrix)      
+  CrossImpactMatrix<-CrossImpactMatrix[1:length(StateList),1:length(StateList)]
   ReturnList<- list(CrossImpactMatrix,CIBshape)
 }

@@ -1,6 +1,6 @@
 #' MakeScoreMatrix
 #'
-#' Given a CIB matrix, calculate the consistancy scores of each world state, as viewed from each other world state. Also calculates adjacentcy of states, along with making a empty transition matrix to be filled in later.
+#' Given a CIB matrix, calculate the consistancy scores of each world state, as viewed from each other world state. Also calculates adjacency of states, along with making a empty transition matrix to be filled in later.
 #' @param TheList A list, the first element of which is a CIB matrix, and the second of which is a vector describing the "shape" of the CIB matrix (a vector listing how many states per descriptor). The output of  \code{\link{InputCibBanner}} is a suitable input for this function.
 #' @keywords CIB
 #' @export
