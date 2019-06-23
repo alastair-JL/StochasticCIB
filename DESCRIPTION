@@ -8,3 +8,4 @@ Maintainer: Alastair Jamieson-Lane <aja107@math.ubc.ca>
 Description: Some tools to be used when doing cross impact balance analysis.
 License: GPL-2
 RoxygenNote: 6.1.1
+Encoding: UTF-8

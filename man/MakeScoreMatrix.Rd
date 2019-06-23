@@ -13,7 +13,7 @@ MakeScoreMatrix(TheList)
 A list containing a blank transition matrix, a "Score" matrix, and an adjacency matrix. The score matrix gives the consistancy score of every world state from the point of view of every other (rows being the source state, columns the target state). The adjacency matrix identifies WHICH descriptor would need to be changed to move from one state to another, taking the value 0 if no descriptor is changed, or -1 if multiple descriptors must be changed.
 }
 \description{
-Given a CIB matrix, calculate the consistancy scores of each world state, as viewed from each other world state. Also calculates adjacentcy of states, along with making a empty transition matrix to be filled in later.
+Given a CIB matrix, calculate the consistancy scores of each world state, as viewed from each other world state. Also calculates adjacency of states, along with making a empty transition matrix to be filled in later.
 }
 \note{
 The output of this function makes suitable input for various \code{\link{CIBTransitionCalculators}}.
