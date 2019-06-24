@@ -16,7 +16,7 @@ A list containing a blank transition matrix, a "Score" matrix, and an adjacency 
 Given a CIB matrix, calculate the consistancy scores of each world state, as viewed from each other world state. Also calculates adjacency of states, along with making a empty transition matrix to be filled in later.
 }
 \note{
-The output of this function makes suitable input for various \code{\link{CIBTransitionCalculators}}.
+The output of this function makes suitable input for various \code{\link{TransitionCalculators}}.
 }
 \examples{
 data(antCIB)

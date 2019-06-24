@@ -4,7 +4,7 @@
 #' @param TheList A list, the first element of which is a CIB matrix, and the second of which is a vector describing the "shape" of the CIB matrix (a vector listing how many states per descriptor). The output of  \code{\link{InputCibBanner}} is a suitable input for this function.
 #' @keywords CIB
 #' @export
-#' @note The output of this function makes suitable input for various \code{\link{CIBTransitionCalculators}}.
+#' @note The output of this function makes suitable input for various \code{\link{TransitionCalculators}}.
 #' @return A list containing a blank transition matrix, a "Score" matrix, and an adjacency matrix. The score matrix gives the consistancy score of every world state from the point of view of every other (rows being the source state, columns the target state). The adjacency matrix identifies WHICH descriptor would need to be changed to move from one state to another, taking the value 0 if no descriptor is changed, or -1 if multiple descriptors must be changed.
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples
