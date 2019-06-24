@@ -6,12 +6,19 @@
 #' For a detailed discussion of Cross Impact Balance please see the references below. 
 #' 
 #' At its most basic, CIB works as follows:
+#' 
 #' * Suppose we are studying a system governed by a complex web of interactions. Such a system might an ecology, a country, or even an entire bio-economic system of a plant.
+#' 
 #' * Suppose are able to track numerous "descriptors" of this system. If studying a country we might have such descriptors as "Government", "Economic status" "Population density" and "Diplomatic standing"
+#' 
 #' * Each descriptor can be in a variety of states. For example the Government might be a military dictatorship, a democracy or a monarchry.
+#' 
 #' * Suppose we have reason to believe that the status of each descriptor is liable to have an impact on the status of other descriptors: Educational level will effect income. Population density will effect environmental conditions. We record these beliefs numerically in a Cross Impact Matrix
+#' 
 #' * CIB analysis takes these beliefs and then uses them to give each possible World State a "score" from the point of view of each other world state.
+#' 
 #' * World states that give themselves a high score are termed "Consistant", and are expected to be stable. World states that give OTHER states are highsccore are unstable, and are liable to "transition" to other states via some form of transition rule.
+#' 
 #' * Based on these relative scores, and a transition rule, we can "predicted" where a system may end up after some time, and which states are in some sense "paradoxical", and unlikely to be seen.
 #'
 #' Please be warned, Cross Impact Balance is nothing more than a mathematical framework for exploring hypothetical scenarios.
