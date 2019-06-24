@@ -23,7 +23,7 @@
 #'  Next \code{\link{MakeScoreMatrix}} will find the relative scores of each 
 #'  world state from each other world state, and you'll be able to use one of
 #'   the many \code{\link{TransitionCalculators}} to determine the transition probabilities of your system.
-#'   Finally, \code{\link{ForecastStatistics}} will calculate the long term forecast.
+#'   Finally, \code{\link{CIBforecast}} will calculate the long term forecast.
 #'   
 #'   To see and Example CIB matrix, use \code{\link{antCIB}}.
 #' 
