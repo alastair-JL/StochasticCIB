@@ -16,7 +16,7 @@ Here we list the various "interpretation" functions, and give a basic explainati
 the individual transition calculators. All transition calculators take the same input.
 }
 \note{
-The currently available transition functions are: \code{\link{TransToMax}},\code{\link{TransToMaxAdj}},\code{\link{TransToFastestActing}},\code{\link{DiceTransition}},\code{\link{LocalBoltzmann}},\code{\link{LocalLogistic}},\code{\link{LocalArctan}}
+The currently available transition functions are: \code{\link{TransToMax}}, \code{\link{TransToMaxAdj}}, \code{\link{TransToFastestActing}}, \code{\link{DiceTransition}}, \code{\link{LocalBoltzmann}}, \code{\link{LocalLogistic}}, \code{\link{LocalArctan}}
 For details on each, please follow the respective links.
 
 Be warned, all transition functions are liable to malfunction in the presence of unreasonably large score values (999999 or higher). If you find yourself with score values that large, please consider dividing all scores by 100 (or similar).
