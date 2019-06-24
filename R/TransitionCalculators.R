@@ -12,7 +12,7 @@
 #' For details on each, please follow the respective links.
 #' @note Be warned, all transition functions are liable to malfunction in the presence of unreasonably large score values (999999 or higher). If you find yourself with score values that large, please consider dividing all scores by 100 (or similar).
 #' @keywords CIB
-#' @name CIBTransitionCalculators
+#' @name TransitionCalculators
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples
 #' data(antCIB)
