@@ -17,11 +17,12 @@
 
 CIBforecast<-function(Transitions){
   Eigs<-eigen(t(Transitions))
-  Eigs<-Eigs[[2]][,1] #Grab the dominante eigenvector from the set of eigenvectors.
-  Eigs<-Eigs/sum(Eigs) #normalise to make a probability
+  Eigs<-Eigs[[2]][,Eigs[[1]]==1] #Grab the dominante eigenvector from the set of eigenvectors.
+
+  Eigs<-Eigs/colSums(Eigs) #normalise to make a probability
   Eigs<-abs(Eigs)
-  names(Eigs)<-colnames(Transitions)
-  Entropy<- -sum(Eigs*log(Eigs))
-  EntropyProduction<- -sum(Eigs*rowSums(Transitions*log(Transitions+10^-100)))
+  rownames(Eigs)<-rownames(Transitions)
+  Entropy<- -colSums(Eigs*log(Eigs +10^-100))
+  EntropyProduction<- -colSums(Eigs*rowSums(Transitions*log(Transitions+10^-100)))
   ReturnList<- list(Eigs,Entropy,EntropyProduction)
 }
