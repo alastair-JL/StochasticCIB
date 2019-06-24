@@ -18,9 +18,11 @@ A matrix describing the transition probability from each world state (rows) to e
 A transition matrix function, whereby given the current worldstate, we always transition directly to the world state with the highest possible score.
 }
 \note{
-In the case of a tie, transition probability is split evenly between the top .
+In the case of a tie, transition probability is split evenly between the top candidates.
 
-Other transition functions can be found via \code{\link{CIBTransitionCalculators}}
+This transition procedure is one of the most likely to result in loops, with antagonistic and synergistic descriptors switching simultaneously, and thus never reaching a stable arrangement (for example Ab -> aB -> Ab->...)
+
+Other transition functions can be found via \code{\link{TransitionCalculators}}
 }
 \examples{
 data(antCIB)

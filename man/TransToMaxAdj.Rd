@@ -15,10 +15,12 @@ TransToMaxAdj(TheList, TransRelAdj = NA)
 A matrix describing the transition probability from each world state (rows) to each other world state (columns).
 }
 \description{
-A transition matrix function, whereby given the current worldstate, we switch to the switch to the worldstate with the highest relative score, changing at most one descriptor in the process.
+A transition matrix function, whereby given the current worldstate, we switch to the world state with the highest score, changing at most one descriptor in the process.
 }
 \note{
-In the case of a tie, transition probability is split evenly between the top .
+In the case of a tie, transition probability is split evenly between the top candidates.
+
+Other transition functions can be found via \code{\link{TransitionCalculators}}
 }
 \examples{
 data(antCIB)

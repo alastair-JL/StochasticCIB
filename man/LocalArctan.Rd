@@ -19,7 +19,13 @@ LocalArctan(TheList, TransRelAdj = NA, beta = 1, shift = 0)
 A matrix describing the transition probability from each world state (rows) to each other world state (columns).
 }
 \description{
-A Local stochastic succession rule. For all adjacent states (states where only one descriptor has changed), calculate the relative change in score (compared to staying in the current location). Take the arctan function of this value to get the relative probability. <NOTE, need better way of explaining this, or reference to paper>. Generally speaking, this transition function will give all transitions with negitive score negligable probability, and all transitions with positive score roughly equal probability.
+A Local stochastic succession rule. For all adjacent states (states where only one descriptor has changed), calculate the relative change in score (compared to staying in the current location). Take the arctan function of this value to get the relative probability. 
+Stated mathematically, if \eqn{P_{A\rightarrow B}} is the transition rate from A to B, and \eqn{S_A(B)} is the score of the state B, from the point of view of A, then
+\deqn{P_{A\rightarrow B= \frac{atan[\beta (S_A(B)-S_A(A))+s]+pi/2}}{\sum atan[\beta (S_A(C)-S_A(A))+s] +pi/2}}
+Where here we sum over all states that involve changing at most one descriptor.
+}
+\details{
+The net result of this behavior is to make "Negative" transitions exceedingly unlikely, while all ``positive'' transitions recieve roughly equal weight, regardless of score.
 }
 \note{
 Behaves very similat to \code{\link{LocalLogistic}}

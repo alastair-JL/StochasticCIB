@@ -15,10 +15,13 @@ TransToFastestActing(TheList, TransRelAdj = NA)
 A matrix describing the transition probability from each world state (rows) to each other world state (columns).
 }
 \description{
-This transition function assumes that descriptors are written in order of "speed of update" (slowest to fastest). This function looks to see if there is any way to improve score by changing the fastest updating descriptor. If not, then it checks the 2nd fastest, 3rd fastest, and so on.
+This transition function assumes that descriptors are written in order of "speed of update" (slowest to fastest). This function looks to see if there is any way to improve score by changing the fastest updating descriptor. If not, then it checks the 2nd fastest, 3rd fastest, and so on. 
+For example, if your models descriptors are "Tree abundance","Wolf abundance" and "Rabbit abundance", the model will first try to update rabbit abundance. If the current rabbit abundance is stable, then the transition rule will update wolf abundance. If both are stable, then the transition rule will try to update Tree Abundance.
 }
 \note{
-In the case of a tie, transition probability is split evenly between the top .
+In the case of a tie, transition probability is split evenly between the top candidates.
+
+Other transition functions can be found via \code{\link{TransitionCalculators}}
 }
 \examples{
 data(antCIB)

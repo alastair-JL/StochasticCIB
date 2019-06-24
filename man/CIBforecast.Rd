@@ -20,11 +20,9 @@ A function for analysis stochastic transition matrices, and outputting the main 
 }
 \examples{
 data(antCIB)
+boltzTrans<-LocalBoltzmann(antCIB)
+forecast<- CIBforecast(boltzTrans)
 
-
-}
-\references{
-I need a reference for entropy and entropy production.
 }
 \author{
 Alastair Jamieson Lane. <aja107@math.ubc.ca>

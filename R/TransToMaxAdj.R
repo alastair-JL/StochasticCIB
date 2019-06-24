@@ -1,11 +1,12 @@
 #' TransToMaxAdj
 #'
-#' A transition matrix function, whereby given the current worldstate, we switch to the switch to the worldstate with the highest relative score, changing at most one descriptor in the process.
+#' A transition matrix function, whereby given the current worldstate, we switch to the world state with the highest score, changing at most one descriptor in the process.
 #' @keywords CIB
 #' @export
 #' @param TheList a list containing the CIB matrix, and a "shape" vector. The output of \code{\link{InputCibBanner}} is an appropriate input here.
 #' @param TransRelAdj a list containing a blank transition matrix, a relative score matrix, and an adjacency matrix. The output of \code{\link{MakeScoreMatrix}} is appropriate here.
-#' @note In the case of a tie, transition probability is split evenly between the top .
+#' @note In the case of a tie, transition probability is split evenly between the top candidates.
+#' @note Other transition functions can be found via \code{\link{TransitionCalculators}}
 #' @return A matrix describing the transition probability from each world state (rows) to each other world state (columns).
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples

@@ -17,7 +17,10 @@ LocalBoltzmann(TheList, TransRelAdj = NA, beta = 1)
 A matrix describing the transition probability from each world state (rows) to each other world state (columns).
 }
 \description{
-A Local stochastic succession rule. For all adjacent states (states where only one descriptor has changed), calculate the relative change in score (compared to staying in the current location). Take the exponential of this value to get the relative probability. <NOTE, need better way of explaining this, or reference to paper>
+A Local stochastic succession rule. For all adjacent states (states where only one descriptor has changed), calculate the relative change in score (compared to staying in the current location). Take the exponential of this value to get the relative probability. Once all adjacent values have been exponentiated, we divide by the sum over all such values in order to find the transition probabilities. 
+States mathematically, if \eqn{P_{A\rightarrow B}} is the transition rate from A to B, and \eqn{S_A(B)} is the score of the state B, from the point of view of A, then
+\deqn{P_{A\rightarrow B= \frac{exp[\beta S_A(B)]}}{\sum exp[\beta S_A(C)]}}
+Where here we sum over all states that involve changing at most one descriptor.
 }
 \examples{
 data(antCIB)

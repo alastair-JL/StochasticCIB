@@ -1,11 +1,13 @@
 #' TransToFastestActing
 #'
 #' This transition function assumes that descriptors are written in order of "speed of update" (slowest to fastest). This function looks to see if there is any way to improve score by changing the fastest updating descriptor. If not, then it checks the 2nd fastest, 3rd fastest, and so on. 
+#' For example, if your models descriptors are "Tree abundance","Wolf abundance" and "Rabbit abundance", the model will first try to update rabbit abundance. If the current rabbit abundance is stable, then the transition rule will update wolf abundance. If both are stable, then the transition rule will try to update Tree Abundance.
 #' @keywords CIB
 #' @export
 #' @param TheList a list containing the CIB matrix, and a "shape" vector. The output of \code{\link{InputCibBanner}} is an appropriate input here.
 #' @param TransRelAdj a list containing a blank transition matrix, a relative score matrix, and an adjacency matrix. The output of \code{\link{MakeScoreMatrix}} is appropriate here. If left blank, can be calculated on the fly.
-#' @note In the case of a tie, transition probability is split evenly between the top .
+#' @note In the case of a tie, transition probability is split evenly between the top candidates.
+#' @note Other transition functions can be found via \code{\link{TransitionCalculators}}
 #' @return A matrix describing the transition probability from each world state (rows) to each other world state (columns).
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples
