@@ -1,8 +1,7 @@
 # StochasticCIB
 A Collection of R functions for Cross Impact Balance analysis
 
-**StochasticCIB**
-StochasticCIB is a small collection of functions and tools for Cross impact Balance Analysis, for use inside the statistical programme R.
+**StochasticCIB** is a small collection of functions and tools for Cross impact Balance Analysis, for use inside the statistical programme R.
 
 
 To install StochasticCIB, open your favourite R environment (for example Rstudio) and type:
