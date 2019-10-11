@@ -1,7 +1,8 @@
 # StochasticCIB
 A Collection of R functions for Cross Impact Balance analysis
 
-**StochasticCIB** is a small collection of functions and tools for Cross impact Balance Analysis, for use inside the statistical programme R.
+##StochasticCIB\
+is a small collection of functions and tools for Cross impact Balance Analysis, for use inside the statistical programme R.
 
 
 To install StochasticCIB, open your favourite R environment (for example Rstudio) and type:
@@ -18,7 +19,7 @@ To install StochasticCIB, open your favourite R environment (for example Rstudio
 
 From there, the help files will guide you.
 
-**References**
+##References\
 Markov Models of Social Change (Part 1)- Azimuth Forum
 https://johncarlosbaez.wordpress.com/2014/02/24/markov-models-of-social-change-part-1/
 
