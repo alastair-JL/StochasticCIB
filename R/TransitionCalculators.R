@@ -17,8 +17,8 @@
 #' @examples
 #' data(antCIB)
 #' boltzTrans<-LocalBoltzmann(antCIB)
-#' TransRelAdj<-MakeScoreMatrix(antCIB)
-#' TransMaxAdj<-TransToMaxAdj(antCIB,TransRelAdj)
+#' TransScoresAdj<-MakeScoreMatrix(antCIB)
+#' TransMaxAdj<-TransToMaxAdj(antCIB,TransScoresAdj)
 #' 
 #' 
 NULL

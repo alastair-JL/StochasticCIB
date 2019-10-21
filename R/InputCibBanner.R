@@ -8,8 +8,8 @@
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples
 #' CIBobject<- InputCibBanner()
-#' TransRelAdj<-MakeScoreMatrix(CIBobject)
-#' Transitions<-LocalBoltzmann(CIBobject,TransRelAdj)
+#' TransScoresAdj<-MakeScoreMatrix(CIBobject)
+#' Transitions<-LocalBoltzmann(CIBobject,TransScoresAdj)
 #' CIBforecast(Transitions)
 #' 
 InputCibBanner <-function(){
@@ -44,6 +44,9 @@ InputCibBanner <-function(){
   frameNames<- paste(DescriptorBanner,StateList,sep="-")
   CrossImpactMatrix<- mat.or.vec(length(StateList),length(StateList))
   dimnames(CrossImpactMatrix) = list( frameNames,frameNames)
+  
+  input <- readline( paste("R will now open a window for you to edit your Influence Matrix.")  )
+  input <- readline( paste("Please assign all influence scores, and click ``quit'' when you are done.")  )
   CrossImpactMatrix<-edit(CrossImpactMatrix)      
   CrossImpactMatrix<-CrossImpactMatrix[1:length(StateList),1:length(StateList)]
   ReturnList<- list(CrossImpactMatrix,CIBshape)

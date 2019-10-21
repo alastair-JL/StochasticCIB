@@ -9,13 +9,13 @@ For a detailed discussion of Cross Impact Balance please see the references belo
 
 At its most basic, CIB works as follows:
 
-* Suppose we are studying a system governed by a complex web of interactions. Such a system might an ecology, a country, or even an entire bio-economic system of a plant.
+* Suppose we are studying a system governed by a complex web of interactions. Such a system might an ecology, a country, or even an entire bio-economic system of a planet.
 
 * Suppose are able to track numerous "descriptors" of this system. If studying a country we might have such descriptors as "Government", "Economic status" "Population density" and "Diplomatic standing"
 
 * Each descriptor can be in a variety of states. For example the Government might be a military dictatorship, a democracy or a monarchry.
 
-* Suppose we have reason to believe that the status of each descriptor is liable to have an impact on the status of other descriptors: Educational level will effect income. Population density will effect environmental conditions. We record these beliefs numerically in a Cross Impact Matrix
+* Suppose we have reason to believe that the status of each descriptor is liable to have an impact on the status of other descriptors: Educational level will affect income. Population density will affect environmental conditions. We record these beliefs numerically in a Cross Impact Matrix
 
 * CIB analysis takes these beliefs and then uses them to give each possible World State a "score" from the point of view of each other world state.
 

@@ -24,8 +24,8 @@ Be warned, all transition functions are liable to malfunction in the presence of
 \examples{
 data(antCIB)
 boltzTrans<-LocalBoltzmann(antCIB)
-TransRelAdj<-MakeScoreMatrix(antCIB)
-TransMaxAdj<-TransToMaxAdj(antCIB,TransRelAdj)
+TransScoresAdj<-MakeScoreMatrix(antCIB)
+TransMaxAdj<-TransToMaxAdj(antCIB,TransScoresAdj)
 
 
 }

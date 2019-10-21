@@ -17,8 +17,8 @@ A Zero-input function that will prompt the user to list their descriptors, along
 }
 \examples{
 CIBobject<- InputCibBanner()
-TransRelAdj<-MakeScoreMatrix(CIBobject)
-Transitions<-LocalBoltzmann(CIBobject,TransRelAdj)
+TransScoresAdj<-MakeScoreMatrix(CIBobject)
+Transitions<-LocalBoltzmann(CIBobject,TransScoresAdj)
 CIBforecast(Transitions)
 
 }
