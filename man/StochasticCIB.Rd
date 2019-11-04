@@ -30,7 +30,7 @@ To get started use \code{\link{InputCibBanner}} to describe the system you are s
   the many \code{\link{TransitionCalculators}} to determine the transition probabilities of your system.
   Finally, \code{\link{CIBforecast}} will calculate the long term forecast.
   
-  To see and Example CIB matrix, use \code{\link{antCIB}}.
+  To see and Example CIB matrix, use \code{\link{ExampleCIBdata}}.
 }
 \references{
 Markov Models of Social Change (Part 1)- Azimuth Forum https://johncarlosbaez.wordpress.com/2014/02/24/markov-models-of-social-change-part-1/

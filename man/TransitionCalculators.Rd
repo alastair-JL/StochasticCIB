@@ -22,10 +22,10 @@ For details on each, please follow the respective links.
 Be warned, all transition functions are liable to malfunction in the presence of unreasonably large score values (999999 or higher). If you find yourself with score values that large, please consider dividing all scores by 100 (or similar).
 }
 \examples{
-data(antCIB)
-boltzTrans<-LocalBoltzmann(antCIB)
-TransScoresAdj<-MakeScoreMatrix(antCIB)
-TransMaxAdj<-TransToMaxAdj(antCIB,TransScoresAdj)
+data(ExampleCIBdata)
+boltzTrans<-LocalBoltzmann(ExampleCIBdata)
+TransScoresAdj<-MakeScoreMatrix(ExampleCIBdata)
+TransMaxAdj<-TransToMaxAdj(ExampleCIBdata,TransScoresAdj)
 
 
 }

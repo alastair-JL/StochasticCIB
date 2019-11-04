@@ -24,8 +24,8 @@ In the case of a tie, transition probability is split evenly between the top can
 Other transition functions can be found via \code{\link{TransitionCalculators}}
 }
 \examples{
-data(antCIB)
-TransToFastestActing(antCIB)
+data(ExampleCIBdata)
+TransToFastestActing(ExampleCIBdata)
 
 }
 \author{

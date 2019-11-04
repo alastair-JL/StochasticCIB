@@ -23,8 +23,8 @@ States mathematically, if \eqn{P_{A\rightarrow B}} is the transition rate from A
 Where here we sum over all states that involve changing at most one descriptor.
 }
 \examples{
-data(antCIB)
-LocalBoltzmann(antCIB)
+data(ExampleCIBdata)
+LocalBoltzmann(ExampleCIBdata)
 }
 \author{
 Alastair Jamieson Lane. <aja107@math.ubc.ca>

@@ -19,8 +19,8 @@ Given a CIB matrix, MakeScoreMatrix calculates the consistancy scores of every w
 The output of this function makes suitable input for various \code{\link{TransitionCalculators}}.
 }
 \examples{
-data(antCIB)
-TransScoresAdj<-MakeScoreMatrix(antCIB)
+data(ExampleCIBdata)
+TransScoresAdj<-MakeScoreMatrix(ExampleCIBdata)
 Scores<-TransScoresAdj[[2]]
 Adjacency<-TransScoresAdj[[3]]
 ##Output the consistance scores assuming a particular state.

@@ -25,8 +25,8 @@ This transition procedure is one of the most likely to result in loops, with ant
 Other transition functions can be found via \code{\link{TransitionCalculators}}
 }
 \examples{
-data(antCIB)
-Transitions<-TransToMax(antCIB)
+data(ExampleCIBdata)
+Transitions<-TransToMax(ExampleCIBdata)
 
 
 }

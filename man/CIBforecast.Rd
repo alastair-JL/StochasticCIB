@@ -19,8 +19,8 @@ A function for analysis stochastic transition matrices, and outputting the main 
 \code{\link{MakeScoreMatrix}} is probably the function you will need directly after this.
 }
 \examples{
-data(antCIB)
-boltzTrans<-LocalBoltzmann(antCIB)
+data(ExampleCIBdata)
+boltzTrans<-LocalBoltzmann(ExampleCIBdata)
 forecast<- CIBforecast(boltzTrans)
 
 }

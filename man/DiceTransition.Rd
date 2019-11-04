@@ -21,8 +21,8 @@ Whenever one has to transition, pick a single descriptor at random, and then set
 In the event of a tie, probability is spread equally between tie-ing states. Thus, if there are three descriptors, one can end up with probability split (1/6,1/6), 1/3, 1/3.
 }
 \examples{
-data(antCIB)
-DiceTransitions(antCIB)
+data(ExampleCIBdata)
+DiceTransitions(ExampleCIBdata)
 }
 \author{
 Alastair Jamieson Lane. <aja107@math.ubc.ca>

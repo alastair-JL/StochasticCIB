@@ -31,8 +31,8 @@ The net result of this behavior is to make "Negative" transitions exceedingly un
 Behaves very similat to \code{\link{LocalLogistic}}
 }
 \examples{
-data(antCIB)
-LocalArctan(antCIB)
+data(ExampleCIBdata)
+LocalArctan(ExampleCIBdata)
 }
 \author{
 Alastair Jamieson Lane. <aja107@math.ubc.ca>
