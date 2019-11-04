@@ -13,12 +13,12 @@
 #' @return A matrix describing the transition probability from each world state (rows) to each other world state (columns).
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples
-#' data(antCIB)
-#' LocalBoltzmann(antCIB)
+#' data(ExampleCIBdata)
+#' LocalBoltzmann(ExampleCIBdata)
 
 LocalBoltzmann<-function(TheList, TransRelAdj=NA, beta=1){
   if (is.na(TransRelAdj)){
-    TransRelAdj<- MakeScoreMatrix(antCIB)   
+    TransRelAdj<- MakeScoreMatrix(TheList)   
   }
   Transitions<-TransRelAdj[[1]]
   RelativeScores<-TransRelAdj[[2]]

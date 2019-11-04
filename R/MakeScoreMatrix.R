@@ -8,8 +8,8 @@
 #' @return A list containing a "Score" matrix found by summing the appropriate entries in your influence matrix, a blank transition matrix,  and an adjacency matrix. The Consistance score matrix will be of direct interest to you who is using this, the later two matrices are mainly used to help R's internal calculations, and are probably of limited interest to anyone who is using this package. The score matrix gives the consistancy score of every world state from the point of view of every other (rows being the source state, columns the target state). The adjacency matrix identifies WHICH descriptor would need to be changed to move from one state to another, taking the value 0 if no descriptor is changed, or -1 if multiple descriptors must be changed. Positive values in the adjacency matrix occur when precisely one descriptor has been changed. The value of such positive entries specifies \emph{which} descriptor is changed. Hence  "A,$,X"-->"A,$,Z" will have a "3" in the adjacency matrix, while "A,$,X"-->"A,%,X"  has "2" and "A,$,X"-->"B,?,Z"  has "-1".
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples
-#' data(antCIB)
-#' TransScoresAdj<-MakeScoreMatrix(antCIB)
+#' data(ExampleCIBdata)
+#' TransScoresAdj<-MakeScoreMatrix(ExampleCIBdata)
 #' Scores<-TransScoresAdj[[2]]
 #' Adjacency<-TransScoresAdj[[3]]
 #' ##Output the consistance scores assuming a particular state.

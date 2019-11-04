@@ -10,13 +10,13 @@
 #' @return A matrix describing the transition probability from each world state (rows) to each other world state (columns).
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples
-#' data(antCIB)
-#' Transitions<-TransToMaxAdj(antCIB)
+#' data(ExampleCIBdata)
+#' Transitions<-TransToMaxAdj(ExampleCIBdata)
 #' 
 
 TransToMaxAdj<-function(TheList, TransRelAdj=NA){
   if (is.na(TransRelAdj)){
-    TransRelAdj<- MakeScoreMatrix(antCIB)   
+    TransRelAdj<- MakeScoreMatrix(TheList)   
   }
   Transitions<-TransRelAdj[[1]]
   RelativeScores<-TransRelAdj[[2]]

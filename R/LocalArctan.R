@@ -17,8 +17,8 @@
 #' @return A matrix describing the transition probability from each world state (rows) to each other world state (columns).
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples
-#' data(antCIB)
-#' LocalArctan(antCIB)
+#' data(ExampleCIBdata)
+#' LocalArctan(ExampleCIBdata)
 
 
 
@@ -26,7 +26,7 @@ LocalArctan<-function(TheList, TransRelAdj=NA, beta=1,shift=0){
   ##Note, I do not remember how much weight we decided to give the "stay put" option. 
   ##I feel like it was dealt with in a special manner, but can't remember how.    
     if (is.na(TransRelAdj)){
-      TransRelAdj<- MakeScoreMatrix(antCIB)   
+      TransRelAdj<- MakeScoreMatrix(TheList)   
     }
   Transitions<-TransRelAdj[[1]]
   RelativeScores<-TransRelAdj[[2]]

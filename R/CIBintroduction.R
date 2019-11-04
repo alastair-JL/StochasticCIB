@@ -30,7 +30,7 @@
 #'   the many \code{\link{TransitionCalculators}} to determine the transition probabilities of your system.
 #'   Finally, \code{\link{CIBforecast}} will calculate the long term forecast.
 #'   
-#'   To see an Example CIB matrix, use \code{data(\link{antCIB})}.
+#'   To see an Example CIB matrix, use \code{data(\link{ExampleCIBdata})}.
 #' 
 #' 
 #' @references 

@@ -15,10 +15,10 @@
 #' @name TransitionCalculators
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples
-#' data(antCIB)
-#' boltzTrans<-LocalBoltzmann(antCIB)
-#' TransScoresAdj<-MakeScoreMatrix(antCIB)
-#' TransMaxAdj<-TransToMaxAdj(antCIB,TransScoresAdj)
+#' data(ExampleCIBdata)
+#' boltzTrans<-LocalBoltzmann(ExampleCIBdata)
+#' TransScoresAdj<-MakeScoreMatrix(ExampleCIBdata)
+#' TransMaxAdj<-TransToMaxAdj(ExampleCIBdata,TransScoresAdj)
 #' 
 #' 
 NULL

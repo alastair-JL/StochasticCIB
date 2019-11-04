@@ -20,8 +20,8 @@
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @note Behaves very similat to \code{\link{LocalArctan}}
 #' @examples
-#' data(antCIB)
-#' LocalLogistic(antCIB)
+#' data(ExampleCIBdata)
+#' LocalLogistic(ExampleCIBdata)
 
 
 
@@ -29,7 +29,7 @@ LocalLogistic<-function(TheList, TransRelAdj=NA, beta=1,shift=0){
   ##Note, I do not remember how much weight we decided to give the "stay put" option. 
   ##I feel like it was dealt with in a special manner, but can't remember how.  
   if (is.na(TransRelAdj)){
-    TransRelAdj<- MakeScoreMatrix(antCIB)   
+    TransRelAdj<- MakeScoreMatrix(TheList)   
   }
   Transitions<-TransRelAdj[[1]]
   RelativeScores<-TransRelAdj[[2]]

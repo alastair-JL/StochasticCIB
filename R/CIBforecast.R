@@ -9,8 +9,8 @@
 #' @return A list containing a long term forcast vector (a vector of probabilities of world states), a number representing the entropy of this vector, and a number representing the entropy production.
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples
-#' data(antCIB)
-#' boltzTrans<-LocalBoltzmann(antCIB)
+#' data(ExampleCIBdata)
+#' boltzTrans<-LocalBoltzmann(ExampleCIBdata)
 #' forecast<- CIBforecast(boltzTrans)
 #' 
 
