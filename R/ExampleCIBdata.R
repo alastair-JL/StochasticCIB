@@ -5,6 +5,7 @@
 #' Each state can take the value either Low, Medium or High. 
 #' For the sake of this example we use the impact matrix previously considered by 
 #' Lloyd and Schweizer (2014).
+#' For a slightly larger example, please see \code{\link{SomewhereData}}.
 #' 
 #' @keywords CIB , data
 #' @name ExampleCIBdata
