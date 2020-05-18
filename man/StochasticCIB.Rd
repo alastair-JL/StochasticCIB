@@ -3,7 +3,6 @@
 \docType{package}
 \name{StochasticCIB}
 \alias{StochasticCIB}
-\alias{StochasticCIB-package}
 \title{StochasticCIB}
 \description{
 StochasticCIB is an R package containing a number of function designed to facilitate Cross-Impact Balance analysis.

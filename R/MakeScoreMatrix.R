@@ -30,6 +30,7 @@ MakeScoreMatrix<-function(TheList){
   RelativeScores<-mat.or.vec(numWorldState,numWorldState)  
   AdjacentMatrix<-mat.or.vec(numWorldState,numWorldState)  
   WorldStateNames<- c("blank")
+  ShortStateNames<- c("blank")
   Counter<-0
   TargCounter<-0
   while(Counter<numWorldState){
@@ -39,7 +40,10 @@ MakeScoreMatrix<-function(TheList){
       CurrentState<-CurrentState+c(0,(CurrentState>CIBshape)[-NumDesc]) -(CurrentState>CIBshape)*CIBshape      
     }    
     nextname=paste(listName[CurrentState+shapeOffest],sep=" ",collapse=" ")
+    initials=listName[CurrentState+shapeOffest]
+    initials<-paste(substr(initials,nchar(initials),nchar(initials)),sep="",collapse = "")
     WorldStateNames<- c(WorldStateNames,nextname)
+    ShortStateNames<- c(ShortStateNames,initials)
     ##Okay, so we've identified the current state, and now need to determine its transitions.
     targetState<-CIBshape
     TargCounter<-0
@@ -55,11 +59,12 @@ MakeScoreMatrix<-function(TheList){
     }  
   }  
   WorldStateNames=WorldStateNames[-1]
+  ShortStateNames=ShortStateNames[-1]
   rownames(Transitions)<-WorldStateNames
   rownames(RelativeScores)<-WorldStateNames
   rownames(AdjacentMatrix)<-WorldStateNames
-  colnames(Transitions)<-WorldStateNames
-  colnames(RelativeScores)<-WorldStateNames
-  colnames(AdjacentMatrix)<-WorldStateNames  
+  colnames(Transitions)<-ShortStateNames
+  colnames(RelativeScores)<-ShortStateNames
+  colnames(AdjacentMatrix)<-ShortStateNames  
   ReturnList<- list(Transitions,RelativeScores,AdjacentMatrix)
 }
