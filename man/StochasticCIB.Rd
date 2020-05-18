@@ -27,9 +27,10 @@ To get started use \code{\link{InputCibBanner}} to describe the system you are s
  Next \code{\link{MakeScoreMatrix}} will find the relative scores of each 
  world state from each other world state, and you'll be able to use one of
   the many \code{\link{TransitionCalculators}} to determine the transition probabilities of your system.
-  Finally, \code{\link{CIBforecast}} will calculate the long term forecast.
+  Use, \code{\link{CIBforecast}} will calculate the long term forecast.
+  Finally \code{\link{CIBgraph}} will visualize your results; some tweaking may be required.
   
-  To see and Example CIB matrix, use \code{\link{ExampleCIBdata}}.
+  To see an Example CIB matrix, use \code{\link{ExampleCIBdata}}.
 }
 \references{
 Markov Models of Social Change (Part 1)- Azimuth Forum https://johncarlosbaez.wordpress.com/2014/02/24/markov-models-of-social-change-part-1/
