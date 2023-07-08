@@ -8,7 +8,8 @@
 #' For a detailed discussion of Cross Impact Balance please see the references below. 
 #' 
 #' Please be warned, Cross Impact Balance is nothing more than a mathematical framework for exploring hypothetical scenarios.
-#' It is not a crystal ball, and it would be unwise to imagine that the presence of numbers correspond with either certainty or precision. The numbers merely allow us to mechanise the process of considering hypothetical situation, and allow us to estimate where we should focus our attention.
+#' It is not a crystal ball, and it would be unwise to imagine that the presence of numbers correspond with either certainty or precision.
+#' The numbers merely allow us to mechanise the process of considering hypothetical situation, and allow us to estimate where we should focus our attention.
 #' 
 #' @details
 #' \tabular{ll}{

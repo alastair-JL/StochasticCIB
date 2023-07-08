@@ -15,7 +15,7 @@
 #' Transitions<-TransToMax(ExampleCIBdata)
 #' 
 #' 
-TransToMax<-function(TheList, TransRelAdj=NA){
+TransToMax<-function(TheList, TransRelAdj=NA,Deterministic=F){
   if (is.na(TransRelAdj)){
     TransRelAdj<- MakeScoreMatrix(TheList)   
   }
@@ -25,7 +25,11 @@ TransToMax<-function(TheList, TransRelAdj=NA){
   CrossImpactMatrix<-TheList[[1]]
   listName<-colnames(CrossImpactMatrix)
   CIBshape<- TheList[[2]]    
-  ##For reasons I can not fathom, apply(A,1,function(x) x) appears to give A'. Hence I need to ass a transpose to keep everything nicesly in line. Okay.
+  if(Deterministic){
+    epsilon=10^-5;
+    RelativeScores=t(t(RelativeScores)+epsilon*1:ncol(RelativeScores))
+  }
+  ##For reasons I can not fathom, apply(A,1,function(x) x) appears to give A'. Hence I need to transpose to keep everything nicesly in line. Okay.
   Transitions<-t(apply(RelativeScores, 1, function(x) x==max(x)))
   Transitions<-t(apply(Transitions, 1, function(x) x/sum(x)))
 } 

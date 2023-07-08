@@ -29,17 +29,14 @@ NULL. Function generates a picture, but has not return type.
 \description{
 Take your CIB transition matrix for a particular transition rule, and produce the corresponding graph.
 }
-\note{
-\code{\link{MakeScoreMatrix}} is probably the function you will need directly after this.
-}
 \examples{
 data(ExampleCIBdata)
 boltzTrans<-LocalBoltzmann(ExampleCIBdata)
 forecast<- CIBforecast(boltzTrans)
-CIBpaintGraph(boltzTrans,forecast[[1]])
-CIBpaintGraph(boltzTrans,forecast[[1]],2)
-CIBpaintGraph(boltzTrans,forecast[[1]],2,0)
-CIBpaintGraph(boltzTrans,forecast[[1]],2,10^-4,layout.grid)
+CIBgraph(boltzTrans,forecast[[1]])
+CIBgraph(boltzTrans,forecast[[1]],2)
+CIBgraph(boltzTrans,forecast[[1]],2,0)
+CIBgraph(boltzTrans,forecast[[1]],2,10^-4,layout.grid)
 }
 \author{
 Alastair Jamieson Lane. <aja107@math.ubc.ca>

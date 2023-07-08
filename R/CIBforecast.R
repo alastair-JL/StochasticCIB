@@ -17,9 +17,19 @@
 
 CIBforecast<-function(Transitions){
   Eigs<-eigen(t(Transitions))
-
-  Eigs<-Re(Eigs[[2]]%*%((Re(Eigs[[1]])>(1-10^-6))*solve(Eigs[[2]], (rep(1, nrow(Transitions))))))
-
+  
+  if(abs(prod((Eigs[[1]])))>10^-8){
+     Eigs<-Re(Eigs[[2]]%*%((Re(Eigs[[1]])>(1-10^-6))*solve(Eigs[[2]], (rep(1, nrow(Transitions))))))
+  }else{
+    Eigs<-(rep(1, nrow(Transitions)));
+    for(iii in 1:500){
+      Eigs<-t(Transitions)%*%Eigs;
+    }
+    Eigs<-(t(Transitions)%*%Eigs + Eigs)/2;
+    Eigs<-(t(Transitions)%*%Eigs + Eigs)/2;
+    Eigs<-(t(Transitions)%*%Eigs + Eigs)/2;
+    Eigs<-(t(Transitions)%*%Eigs + Eigs)/2; #blur cycles a bit, so that Periodicity has small impact on our thing.
+  }
   rownames(Eigs)<-colnames(Transitions)
   colnames(Eigs)<-c('')
   Entropy<- -colSums(Eigs*log(Eigs + 10^-100))

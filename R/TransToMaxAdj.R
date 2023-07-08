@@ -14,7 +14,7 @@
 #' Transitions<-TransToMaxAdj(ExampleCIBdata)
 #' 
 
-TransToMaxAdj<-function(TheList, TransRelAdj=NA){
+TransToMaxAdj<-function(TheList, TransRelAdj=NA,Deterministic=F){
   if (is.na(TransRelAdj)){
     TransRelAdj<- MakeScoreMatrix(TheList)   
   }
@@ -25,6 +25,10 @@ TransToMaxAdj<-function(TheList, TransRelAdj=NA){
   listName<-colnames(CrossImpactMatrix)
   CIBshape<- TheList[[2]]    
   RelativeScoresCorrect<-RelativeScores -99999999*(AdjacentMatrix< -0.5)
+  if(Deterministic){
+    epsilon=10^-5;
+    RelativeScoresCorrect=t(t(RelativeScoresCorrect)+epsilon*1:ncol(RelativeScoresCorrect))
+  }
   Transitions<-t(apply(RelativeScoresCorrect, 1, function(x) x==max(x)))
   Transitions<-t(apply(Transitions, 1, function(x) x/sum(x)))
 } 

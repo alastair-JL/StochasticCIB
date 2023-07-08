@@ -9,32 +9,31 @@
 #' @param target All nodes are going to be colour coded. Based on which factor do you want to colour code them? This value takes on integer values.
 #' @param cutoffMultiplier For the sake of reasonable visualization, CIBGraph will, by default, ignore all edges with probability less than 10^-4. If you wish to include all edges, set this value to 0. If you wish to neglect more edges, set this cut off higher, for example 10^-2.
 #' @param layout CIBgraph uses the package igraph internally in order to draw your markov chain. By default we use "layout_with_dh" to layout the nodes. If you'd prefer a different layout, select one here. See the R \link{igraph} manual for details.
-#' @note \code{\link{MakeScoreMatrix}} is probably the function you will need directly after this.
 #' @return NULL. Function generates a picture, but has not return type.
 #' @author Alastair Jamieson Lane. <aja107@@math.ubc.ca>
 #' @examples
 #' data(ExampleCIBdata)
 #' boltzTrans<-LocalBoltzmann(ExampleCIBdata)
 #' forecast<- CIBforecast(boltzTrans)
-#' CIBpaintGraph(boltzTrans,forecast[[1]])
-#' CIBpaintGraph(boltzTrans,forecast[[1]],2)
-#' CIBpaintGraph(boltzTrans,forecast[[1]],2,0)
-#' CIBpaintGraph(boltzTrans,forecast[[1]],2,10^-4,layout.grid)
+#' CIBgraph(boltzTrans,forecast[[1]])
+#' CIBgraph(boltzTrans,forecast[[1]],2)
+#' CIBgraph(boltzTrans,forecast[[1]],2,0)
+#' CIBgraph(boltzTrans,forecast[[1]],2,10^-4,layout.grid)
 
 
-CIBgraph<-function(Transitions,weight=NULL,target=1,cutoffMultiplier=10^-4,layout=layout_with_dh){
-  network <- graph_from_adjacency_matrix(Transitions , mode='directed', diag=T,weighted=T)
+CIBgraph<-function(Transitions,weight=NULL,target=1,cutoffMultiplier=10^-4,layout=igraph::layout_with_dh){
+  network <- igraph::graph_from_adjacency_matrix(Transitions , mode='directed', diag=T,weighted=T)
   
   if(nrow(Transitions)!=ncol(Transitions)){
     error("Transition matrix must be square. What are you doing?")
   }
   
-  if(is.null(weight)||nrow(weight)!=nrow(Transitions)){
+  if(is.null(weight)|NROW(weight)!=NROW(Transitions)){
     weight=rep(15,nrow(Transitions));
   }else{
-    weight<-log(weight);
+    weight<-log(weight+10^-10);
     weight<- -sqrt(max(weight)-weight)
-    weight<- 19*weight/max(abs(weight))+28
+    weight<- 16*weight/max(abs(weight))+26
     weight<-as.numeric(t(weight))
   }
   
@@ -64,16 +63,16 @@ CIBgraph<-function(Transitions,weight=NULL,target=1,cutoffMultiplier=10^-4,layou
       }
     
   links<- data.frame(linkRow,linkCol,linkThk,stringsAsFactors =F)
-  network <- graph_from_data_frame(d=links, vertices=nodes, directed=T) 
+  network <- igraph::graph_from_data_frame(d=links, vertices=nodes, directed=T) 
   
-  layout_nicely(network, dim = 2)
+  igraph::layout_nicely(network, dim = 2)
   
   coul  <- c("#88CC44","#4488CC","#CC4488","#CC8844","#44CC88","#8844CC","#22EE22","#2222EE","#EE2222")
   # Create a vector of color
-  my_color <- coul[as.numeric(as.factor(V(network)$carac))]
+  my_color <- coul[as.numeric(as.factor(igraph::V(network)$carac))]
 
   plot(network,vertex.size=weight, vertex.color=my_color,
-       vertex.label.cex=weight/20, vertex.label.family="Ariel",
-       edge.width=linkThk, edge.curved=0.25,    edge.arrow.size=0.8,                            # Arrow size, defaults to 1
-       edge.arrow.width=0.8, edge.color=linkHex,loop.angle=0.5,layout=layout )
+       vertex.label.cex=weight/27, vertex.label.family="Ariel",
+       edge.width=linkThk, edge.curved=0.35,    edge.arrow.size=0.8,                            # Arrow size, defaults to 1
+       edge.arrow.width=0.8, edge.color=linkHex,loop.angle=0.85,layout=layout )
 }
