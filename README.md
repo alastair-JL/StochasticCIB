@@ -19,8 +19,6 @@ To install StochasticCIB, open your favourite R environment (for example Rstudio
 
 From there, the help files will guide you.
 
-Currently StochasticCIB does not contain any visualization tools - visualization of transitions must be executed using external tools such as iGraph. Given sufficient interest/requests, I will invest time in building such tools, but for now, existing tools should suffice.
-
 **References**\
 Markov Models of Social Change (Part 1)- Azimuth Forum
 https://johncarlosbaez.wordpress.com/2014/02/24/markov-models-of-social-change-part-1/
